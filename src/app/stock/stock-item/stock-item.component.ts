@@ -26,10 +26,13 @@ export class StockItemComponent implements OnInit {
     this.previousPrice = 80;
     this.positiveChange = this.price >= this.previousPrice;
     this.favorite = false;
+    if (this.positiveChange) {
+      console.log('der horst');
+    }
   }
 
-  toggleFavorite() {
-    console.log('toggle fav-state for this stock');
+  toggleFavorite(event: Event) {
+    console.log('toggle fav-state for this stock' ,event);
     this.favorite = !this.favorite;
   }
 }
